@@ -305,6 +305,9 @@ function initCheckout() {
     const url   = `https://wa.me/${waNum}?text=${encodeURIComponent(msg)}`;
 
     window.open(url, '_blank', 'noopener,noreferrer');
+
+    // Clear the cart after sending the order to WhatsApp
+    window.FOMO_CART?.clearCart();
   });
 
   // Inline validation on blur
