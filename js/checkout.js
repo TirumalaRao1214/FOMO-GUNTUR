@@ -336,7 +336,7 @@ function getWhatsAppNumber() {
   // Try to read from content.json cached value
   const cached = window.FOMO_CONTENT?.business?.whatsapp;
   if (cached) return cached.replace(/\D/g, '');
-  return '91XXXXXXXXXX'; // fallback placeholder
+  return '919885416143'; // owner WhatsApp
 }
 
 // ── Expose ───────────────────────────────────────────────────────
