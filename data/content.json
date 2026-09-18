@@ -1,0 +1,100 @@
+{
+  "business": {
+    "name": "FOMO",
+    "tagline": "Dress Sharp. Stand Out.",
+    "description": "FOMO Guntur is the city's premier ready-made dress store exclusively for men — where every outfit is crafted to make you the best-dressed man in the room.",
+    "address": "FOMO, Guntur, Andhra Pradesh",
+    "phone": "+91-XXXXXXXXXX",
+    "whatsapp": "+91XXXXXXXXXX",
+    "instagram": "https://www.instagram.com/fomo.guntur/",
+    "instagramHandle": "@fomo.guntur",
+    "hours": "Open Daily · Hours: [Owner to fill in]",
+    "mapsUrl": "https://www.google.com/maps/search/FOMO+Guntur+Andhra+Pradesh",
+    "mapEmbed": "https://maps.google.com/maps?q=Guntur,Andhra+Pradesh&output=embed"
+  },
+  "delivery": {
+    "enabled": true,
+    "charge": 99,
+    "freeAbove": 1000,
+    "note": "Free delivery on orders above ₹1,000"
+  },
+  "vibes": [
+    {
+      "icon": "✦",
+      "title": "Style",
+      "description": "Handpicked ready-made outfits that define the modern man."
+    },
+    {
+      "icon": "◈",
+      "title": "Fit",
+      "description": "Every piece cut to perfection — sharp, clean, and made to impress."
+    },
+    {
+      "icon": "◉",
+      "title": "Trends",
+      "description": "Always stocked with the latest in men's fashion, from casual to formal."
+    },
+    {
+      "icon": "◇",
+      "title": "Quality",
+      "description": "Premium fabrics and finishes — because you deserve nothing less."
+    }
+  ],
+  "menu": [
+    {
+      "category": "Formal Wear",
+      "slug": "formal",
+      "icon": "◉",
+      "description": "Crisp shirts, tailored trousers, blazers and suits for every occasion.",
+      "image": "assets/images/categories/formal-wear.jpg"
+    },
+    {
+      "category": "Casual Wear",
+      "slug": "casual",
+      "icon": "◈",
+      "description": "T-shirts, polos, chinos and co-ords for effortless everyday style.",
+      "image": "assets/images/categories/casual-wear.jpg"
+    },
+    {
+      "category": "Party & Occasion",
+      "slug": "party",
+      "icon": "✦",
+      "description": "Statement kurtas, indo-westerns and party-ready outfits that turn heads.",
+      "image": "assets/images/categories/party-wear.jpg"
+    },
+    {
+      "category": "Ethnic Wear",
+      "slug": "ethnic",
+      "icon": "☽",
+      "description": "Modern kurtas, indo-western looks and festive styles crafted for occasions that matter.",
+      "image": "assets/images/categories/ethnic-wear.jpg"
+    },
+    {
+      "category": "Accessories",
+      "slug": "accessories",
+      "icon": "◇",
+      "description": "Belts, caps, wallets and the finishing touches that complete your look.",
+      "image": "assets/images/categories/accessories.jpg"
+    }
+  ],
+  "gallery": {
+    "images": [
+      { "src": "assets/images/gallery-1.jpg", "alt": "FOMO men's fashion store" },
+      { "src": "assets/images/gallery-2.jpg", "alt": "Men's formal wear at FOMO" },
+      { "src": "assets/images/gallery-3.jpg", "alt": "Men's casual wear at FOMO" },
+      { "src": "assets/images/gallery-4.jpg", "alt": "Men's party and occasion wear at FOMO" },
+      { "src": "assets/images/gallery-5.jpg", "alt": "Men's accessories at FOMO" },
+      { "src": "assets/images/gallery-6.jpg", "alt": "New arrivals at FOMO" }
+    ]
+  },
+  "instagram": {
+    "images": [
+      { "src": "assets/images/insta-1.jpg", "alt": "FOMO men's fashion — sharp fits" },
+      { "src": "assets/images/insta-2.jpg", "alt": "FOMO men's fashion — premium styles" },
+      { "src": "assets/images/insta-3.jpg", "alt": "FOMO men's fashion — latest collection" },
+      { "src": "assets/images/insta-4.jpg", "alt": "FOMO men's fashion — street style" },
+      { "src": "assets/images/insta-5.jpg", "alt": "FOMO men's fashion — casual look" },
+      { "src": "assets/images/insta-6.jpg", "alt": "FOMO men's fashion — outfit of the day" }
+    ]
+  }
+}
