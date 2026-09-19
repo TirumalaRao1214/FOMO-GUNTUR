@@ -304,6 +304,9 @@ function openProductModal(product) {
         <button class="btn-add-to-bag" id="modal-btn-add">ADD TO BAG</button>
         <button class="btn-buy-now" id="modal-btn-buy">BUY NOW</button>
       </div>
+      <button class="btn-modal-advisor" id="modal-btn-advisor" type="button" aria-label="Style advice for this product">
+        ✨ ASK STYLE ADVISOR HOW TO PAIR THIS
+      </button>
     </div>
   `.trim();
 
@@ -368,6 +371,12 @@ function initModalInteractions(product) {
     if (!attemptAddToCart(product)) return;
     closeProductModal();
     openBag();
+  });
+
+  // Ask Style Advisor
+  document.getElementById('modal-btn-advisor')?.addEventListener('click', () => {
+    closeProductModal();
+    window.FOMO_STYLE_ADVISOR?.openWithProduct(product);
   });
 }
 

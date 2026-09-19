@@ -589,11 +589,60 @@
     </div>
   </div>
 
+  <!-- ═══ FOMO STYLE ADVISOR ═══ -->
+  <!-- Floating Advisor Button -->
+  <button id="btn-advisor-trigger" class="advisor-floating-btn" aria-label="Open FOMO Style Advisor" aria-haspopup="dialog">
+    <span class="advisor-btn-sparkle" aria-hidden="true">✨</span>
+    <span class="advisor-btn-text-desktop">STYLE ADVISOR</span>
+    <span class="advisor-btn-text-mobile">Style AI</span>
+  </button>
+
+  <!-- Advisor Chatbot Overlay & Panel -->
+  <div id="advisor-overlay" class="advisor-overlay" hidden></div>
+  <div id="advisor-panel" class="advisor-panel" role="dialog" aria-modal="true" aria-label="FOMO Style Advisor" hidden>
+    <div class="advisor-header">
+      <div class="advisor-header-title-wrap">
+        <h3 class="advisor-header-title">
+          <span aria-hidden="true">✨</span> FOMO STYLE ADVISOR
+        </h3>
+        <p class="advisor-header-sub">Find your colors · Find your fit · Build your look</p>
+      </div>
+      <button class="advisor-close-btn" id="advisor-panel-close" aria-label="Close style advisor">&times;</button>
+    </div>
+
+    <!-- Quick Action Bar -->
+    <div class="advisor-quick-bar" role="toolbar" aria-label="Style quick actions">
+      <button class="advisor-quick-chip" data-action="colors">🎨 Find My Colors</button>
+      <button class="advisor-quick-chip" data-action="outfit">👔 Build My Outfit</button>
+      <button class="advisor-quick-chip" data-action="student">🎓 Student Style</button>
+      <button class="advisor-quick-chip" data-action="office">💼 Office Style</button>
+      <button class="advisor-quick-chip" data-action="budget">💰 Budget Look</button>
+      <button class="advisor-quick-chip" data-action="browse">🛍 Browse Store</button>
+      <button class="advisor-quick-chip" data-action="whatsapp">📲 Talk to FOMO</button>
+    </div>
+
+    <!-- Chat Messages Scroll Log -->
+    <div class="advisor-chat-log" id="advisor-chat-log" role="log" aria-live="polite">
+      <!-- Injected by js/styleAdvisor.js -->
+    </div>
+
+    <!-- Chat Input Form -->
+    <div class="advisor-footer">
+      <form class="advisor-input-form" id="advisor-chat-form" action="javascript:void(0);">
+        <input type="text" class="advisor-input" id="advisor-input" placeholder="Type your height, occasion, or style question..." autocomplete="off" />
+        <button type="submit" class="advisor-send-btn" aria-label="Send message">SEND</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="js/interactions.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/checkout.js"></script>
+  <script src="js/styleAdvisorRules.js"></script>
+  <script src="js/styleAdvisorUI.js"></script>
+  <script src="js/styleAdvisor.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

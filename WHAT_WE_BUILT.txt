@@ -1,0 +1,160 @@
+================================================================================
+                       PROJECT OVERVIEW: WHAT WE BUILT
+================================================================================
+
+PROJECT NAME: FOMO Guntur (Men's Ready-Made Fashion Store & E-Commerce Web Experience)
+LOCATION    : Guntur, Andhra Pradesh, India
+BRAND MOTTO : "Don't Follow The Trend. Set It." / "Dress Sharp. Stand Out."
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+We designed and implemented a high-performance, cinematic, responsive static
+e-commerce and brand showcase web application for FOMO Guntur — premier ready-made
+dress store exclusively for men in Guntur, Andhra Pradesh.
+
+The web experience delivers a luxury dark-and-gold visual identity with zero
+heavyweight frameworks, zero backend dependencies, full offline resiliency,
+WhatsApp checkout order dispatch, and the intelligent "FOMO STYLE ADVISOR"
+interactive men's fashion consultant.
+
+--------------------------------------------------------------------------------
+2. ARCHITECTURAL PILLARS & DESIGN SYSTEM
+--------------------------------------------------------------------------------
+- Visual Language & Aesthetics:
+  * High-contrast luxury palette: Pitch Black (#0a0a0a), Gold Accents (#d4af37,
+    #f5d77f), Charcoal Surfaces (#141414, #1f1f1f), and Crisp White Typography.
+  * Typography hierarchy: Bebas Neue (statement display), Barlow Condensed
+    (subheadings & badges), and Inter (clean body text & UI labels).
+  * Ambient motion: Particle animations, fog diffusion, grid background overlays,
+    and 3D perspective tilts.
+
+- Architecture & Zero-Dependency Philosophy:
+  * Pure Vanilla JavaScript (ES6+ modular structure) + Semantic HTML5 + Custom CSS3.
+  * Zero npm runtime dependencies, zero build-step overhead, runs out of the box
+    on any static hosting (Netlify, Vercel, GitHub Pages, Render, Cloudflare Pages).
+  * Data-driven UI dynamically loaded from decoupled JSON files (`data/content.json`
+    and `data/products.json`) with embedded inline fallbacks for resilient `file://`
+    and offline execution.
+
+--------------------------------------------------------------------------------
+3. KEY FEATURES & IMPLEMENTED MODULES
+--------------------------------------------------------------------------------
+
+A. FOMO Style Advisor (`js/styleAdvisor.js`, `js/styleAdvisorRules.js`, `js/styleAdvisorUI.js`)
+   - Subtitle: "Find your colors. Find your fit. Build your look."
+   - Intelligent Conversational Profile Builder:
+     * One question at a time (User Type, Occasion, Style, Height, Body Build, Skin Tone, Favorite Colors, Budget).
+     * Full support for skipping non-mandatory inputs with zero judgmental feedback.
+     * Natural unit parsing (e.g. 5'8", 175cm, 68kg).
+   - Color Palette Recommendation Engine:
+     * Multi-factor scoring (skin-tone compatibility, occasion context, style preferences, and favorite color boosts).
+     * Categorized into Primary Foundation, Versatile Accents, and Statement / Occasion with visual swatches & explanations.
+   - Dynamic 3-Look Outfit Generator (Classic, Modern, Expressive/Trendy):
+     * Pairs actual catalog items with "Why this look works" styling rationales.
+     * Look Builder Drawer: Allows customers to configure sizes and colors for all outfit pieces simultaneously.
+     * Adds the complete curated look directly into the existing LocalStorage cart (`fomo_cart_v1`).
+   - Student & Employee Wardrobe Capsule Builders:
+     * Student Capsule: High-versatility, budget-conscious mix-and-match pieces for college & campus.
+     * Employee Capsule: Corporate-approved shirts, trousers, chinos, and blazers for client meetings & work.
+   - Budget Outfit Generator: Builds real 2-piece outfits matching user budget limits (e.g., Under ₹1,500).
+   - Product Modal Context Pairing:
+     * When browsing an individual product in the shop, clicking "✨ Ask Style Advisor How to Pair This" passes the active item context and suggests complementary pieces.
+   - LocalStorage Profile Persistence:
+     * Saves user preferences to `fomo_style_profile_v1` with quick 1-click resumption or reset.
+   - Future AI-Ready Architecture:
+     * Encapsulated `styleAdvisorEngine.recommend(profile, products)` abstraction ready for future remote AI/backend models without UI changes.
+   - Direct WhatsApp Stylist Handoff:
+     * Compiles structured customer profile summary and dispatches directly to the store WhatsApp.
+
+B. Hero & Brand Experience (`index.html`, `js/main.js`, `js/interactions.js`)
+   - Cinematic Intro & Loading Screen with glitch-effect brand wordmark and progress bar.
+   - Interactive full-screen hero section featuring dynamic canvas particle system,
+     fog diffusion, depth glow, and kinetic typography.
+   - 3D-Tilt Ambience Cards showcasing core brand values (Style, Fit, Trends, Quality).
+   - Lookbook Gallery Grid with full-screen lightbox modal supporting keyboard navigation
+     (Escape, Arrow keys) and swipe gestures.
+   - Instagram Wall integration linking to the official @fomo.guntur profile.
+   - Skip Intro & accessibility skip-to-content anchors with `prefers-reduced-motion` compliance.
+
+C. Dynamic Product Catalog & Storefront (`js/shop.js`, `data/products.json`)
+   - Curated Men's Ready-Made Collection spanning 50 products across 5 categories:
+     * Formal Wear (Suits, Blazers, Oxford & White Formal Shirts, Tailored Trousers)
+     * Casual Wear (Polo shirts, Denim jackets, Linen shirts, Cargo pants, Oversized tees, Chinos)
+     * Party & Occasion (Indo-Westerns, Velvet blazers, Statement pieces)
+     * Ethnic Wear (Sherwanis, Ivory/Black Kurtas, Nehru jackets, Festive sets)
+     * Accessories (Genuine leather belts, Wallets, Aviator sunglasses, Watches, Caps)
+   - Real-time Instant Search matching product titles, descriptions, and metadata tags.
+   - Category Filters (All, Formal, Casual, Party, Ethnic, Accessories) and "New Drop" toggle.
+   - Fit Filters (All Fits, Slim, Regular, Relaxed, Oversized, Straight Cut).
+   - Dynamic Sorting by Featured, Price (Low to High / High to Low), and Newest.
+   - Interactive Product Quick-View Modal:
+     * Multi-angle image preview.
+     * Dynamic size selector with out-of-stock badges.
+     * Color swatch selector.
+     * Quantity adjustment and direct Add-to-Bag integration.
+
+D. Shopping Bag & Local Persistence (`js/cart.js`)
+   - Browser LocalStorage-persisted cart state (`fomo_cart_v1`) retaining items across sessions.
+   - Slide-over Bag drawer with live item count badges in both desktop header and mobile navigation.
+   - Item-level quantity increment/decrement, size/color variant tracking, and item removal.
+   - Real-time price breakdown calculating subtotal, configurable delivery fees, and
+     automatic Free Delivery rule engine (orders >= ₹1,000).
+
+E. Checkout Engine & WhatsApp Order Integration (`js/checkout.js`)
+   - Multi-step modal checkout workflow with strict input validation:
+     * Customer Information: Full name and 10-digit Indian mobile number validation.
+     * Delivery Address: House/Flat, Street/Colony, City, State, PIN code, and Landmark.
+     * Payment Method: Cash on Delivery (COD) / Pay via UPI on Delivery.
+   - Automated Reference Code Generator creating unique order IDs (e.g., `FOMO-YYYYMMDD-XXXX`).
+   - WhatsApp Order Dispatcher:
+     * Assembles a clean, formatted Markdown order receipt with item breakdown, selected sizes,
+       quantities, pricing, shipping address, and chosen payment method.
+     * Directs customer to the store's official WhatsApp (+91 9885416143) via `https://wa.me/`.
+     * Automatically clears the shopping bag and displays an in-app confirmation screen upon checkout.
+
+F. Store Location & Omnichannel Connect (`index.html`, `data/content.json`)
+   - Embedded Google Maps location locator for Guntur, Andhra Pradesh.
+   - Direct-action contact triggers (Call Store, WhatsApp Chat, Get Directions).
+   - Mobile sticky CTA bottom dock ensuring instant accessibility on smartphones.
+   - Structured JSON-LD schema markup (`@type: ClothingStore`) for enhanced local SEO ranking.
+
+--------------------------------------------------------------------------------
+4. PROJECT REPOSITORY STRUCTURE
+--------------------------------------------------------------------------------
+
+fomo-guntur/
+│
+├── index.html                  # Semantic single-page layout, SEO & Style Advisor UI
+├── README.md                   # Comprehensive deployment, local run, & customization guide
+├── WHAT_WE_BUILT.txt           # Detailed implementation overview & technical log
+├── download_images.py          # Python automation script for catalog imagery curation
+│
+├── css/
+│   └── styles.css              # Design tokens, gold themes, Style Advisor & animations
+│
+├── js/
+│   ├── main.js                 # App initialization, loaders, particle engine, dynamic content render
+│   ├── interactions.js         # IntersectionObserver scroll reveals, 3D tilt, lightbox gallery
+│   ├── shop.js                 # Product catalog filtering, search, sorting, modal viewer & advisor link
+│   ├── cart.js                 # LocalStorage shopping bag state, variant tracking & price engine
+│   ├── checkout.js             # Form validation, unique order ref generator & WhatsApp integration
+│   ├── styleAdvisor.js         # Conversational stylist orchestration, profile state & WhatsApp handoff
+│   ├── styleAdvisorRules.js    # Recommendation engine, color palettes, outfit generator & scoring
+│   └── styleAdvisorUI.js       # Advisor chat bubbles, color swatches, look builder & product cards
+│
+├── data/
+│   ├── content.json            # Business profile, metadata, vibes, categories, & delivery configs
+│   └── products.json           # Complete men's fashion catalog (50 items with variants & prices)
+│
+└── assets/
+    ├── images/
+    │   ├── categories/         # High-resolution category showcase banners
+    │   ├── products/           # Catalog product imagery (mrv-001 to mrv-039)
+    │   ├── gallery-*.jpg       # High-fashion lookbook imagery
+    │   └── insta-*.jpg         # Social wall preview photography
+    └── logo/                   # Brand logo vectors & typography assets
+
+================================================================================
+                      DEVELOPED BY: GOLIS AI SOLUTIONS
+================================================================================
